@@ -25,6 +25,28 @@ jobs:
           echo "   |_| |_| |_|\__,_| .__/|_|\__,_|\__|_|\___/|_| |_|"
           echo "                   |_|                             "
 
+  second_job:
+    needs: first_job
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v6
+
+      - name: List and read files
+        run: |
+          echo "My first GHA job"
+          ls -ltra
+          cat README.md
+
+      - name: Generate ASCII Artwork
+        run: |
+          echo "Generating ASCII artwork..."
+          echo "  _____ _                 _       _   _             " 
+          echo " |_   _| |__   __ _ _ __ (_) __ _| |_(_) ___  _ __  "
+          echo "   | | | '_ \ / _\` | '_ \| |/ _\` | __| |/ _ \| '_ \ "
+          echo "   | | | | | | (_| | |_) | | (_| | |_| | (_) | | | |"
+          echo "   |_| |_| |_|\__,_| .__/|_|\__,_|\__|_|\___/|_| |_|"
+          echo "
       # - name: List files
       #   run: ls
 
