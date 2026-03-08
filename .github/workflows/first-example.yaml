@@ -9,7 +9,8 @@ jobs:
       - name: Welcome_message
         run: echo "My first GHA job"
 
-      - name: Run a script
-        run: |
-          echo "This is a multi-line script"
-          echo "It runs in the same step"
+      - name: List files
+        run: ls
+
+      - name: Reaad file
+        run: cat README.md
